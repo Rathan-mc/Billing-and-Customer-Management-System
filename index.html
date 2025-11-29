@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing & Customer Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Billing & Customer Management System</h1>
+        </header>
+
+        <div class="summary-section">
+            <div class="summary-card">
+                <h3>Total Paid Amount</h3>
+                <div class="amount" id="totalPaid">₹0.00</div>
+            </div>
+            <div class="summary-card">
+                <h3>Total Due Amount</h3>
+                <div class="amount due" id="totalDue">₹0.00</div>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2>Add New Record</h2>
+            <form id="billingForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="date">Date:</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerName">Customer Name:</label>
+                        <input type="text" id="customerName" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="quantity">Quantity (kg):</label>
+                        <input type="number" id="quantity" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="coverSize">Cover Size:</label>
+                        <select id="coverSize" required>
+                            <option value="">Select Size</option>
+                            <option value="5x8">5x8</option>
+                            <option value="8x18">8x18</option>
+                            <option value="9x13">9x13</option>
+                            <option value="10x12">10x12</option>
+                            <option value="11x14">11x14</option>
+                            <option value="13x16">13x16</option>
+                            <option value="16x20">16x20</option>
+                            <option value="17x23">17x23</option>
+                            <option value="20x26">20x26</option>
+                            <option value="24x30">24x30</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="amount">Amount (₹):</label>
+                        <input type="number" id="amount" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Payment Status:</label>
+                        <select id="status" required>
+                            <option value="">Select Status</option>
+                            <option value="paid">Paid</option>
+                            <option value="due">Due</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="manufacturer">Manufacturer:</label>
+                        <select id="manufacturer" required>
+                            <option value="">Select Manufacturer</option>
+                            <option value="gujarat">Gujarat</option>
+                            <option value="hyderabad">Hyderabad</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="paymentMode">Mode of Payment:</label>
+                        <select id="paymentMode" required>
+                            <option value="">Select Mode</option>
+                            <option value="online">Online</option>
+                            <option value="cash">Cash</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary">Add Record</button>
+            </form>
+        </div>
+
+        <div class="records-section">
+            <div class="section-header">
+                <h2>Records</h2>
+                <div class="filter-controls">
+                    <select id="statusFilter">
+                        <option value="all">All Records</option>
+                        <option value="paid">Paid Only</option>
+                        <option value="due">Due Only</option>
+                    </select>
+                    <button id="exportBtn" class="btn-secondary">Export Data</button>
+                </div>
+            </div>
+            
+            <div class="table-container">
+                <table id="recordsTable">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Customer Name</th>
+                            <th>Quantity (kg)</th>
+                            <th>Cover Size</th>
+                            <th>Amount (₹)</th>
+                            <th>Status</th>
+                            <th>Manufacturer</th>
+                            <th>Payment Mode</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recordsBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
