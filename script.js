@@ -165,8 +165,8 @@ class BillingManager {
         if (record.printType === 'plain') {
             return '-';
         }
-        const sides = record.printSides ? this.capitalize(record.printSides) : '';
-        const colors = record.colors ? this.capitalize(record.colors) : '';
+        const sides = record.printSides ? `${record.printSides} Side${record.printSides > 1 ? 's' : ''}` : '';
+        const colors = record.colors ? `${record.colors} Color${record.colors > 1 ? 's' : ''}` : '';
         return [sides, colors].filter(Boolean).join(', ') || '-';
     }
 
