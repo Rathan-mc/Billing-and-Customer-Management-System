@@ -94,6 +94,37 @@
                     </div>
                 </div>
 
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="printType">Print Type:</label>
+                        <select id="printType" required>
+                            <option value="">Select Type</option>
+                            <option value="print">Print</option>
+                            <option value="plain">Plain</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="printSidesGroup" style="display: none;">
+                        <label for="printSides">Print Sides:</label>
+                        <select id="printSides">
+                            <option value="">Select Sides</option>
+                            <option value="1-side">1 Side</option>
+                            <option value="2-side">2 Side</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row" id="colorsRow" style="display: none;">
+                    <div class="form-group">
+                        <label for="colors">Colors:</label>
+                        <select id="colors">
+                            <option value="">Select Colors</option>
+                            <option value="1-color">1 Color</option>
+                            <option value="2-color">2 Colors</option>
+                            <option value="3-color">3 Colors</option>
+                        </select>
+                    </div>
+                </div>
+
                 <button type="submit" class="btn-primary">Add Record</button>
             </form>
         </div>
@@ -102,6 +133,7 @@
             <div class="section-header">
                 <h2>Records</h2>
                 <div class="filter-controls">
+                    <input type="text" id="searchInput" placeholder="Search records..." class="search-input">
                     <select id="statusFilter">
                         <option value="all">All Records</option>
                         <option value="paid">Paid Only</option>
@@ -123,6 +155,8 @@
                             <th>Status</th>
                             <th>Manufacturer</th>
                             <th>Payment Mode</th>
+                            <th>Print Type</th>
+                            <th>Print Details</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
